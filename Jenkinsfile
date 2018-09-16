@@ -60,11 +60,11 @@ node {
     marathon(
         url: 'http://172.29.133.15:8080',
         forceUpdate: false,
-        credentialsId: 'dcos-token',
+      //  credentialsId: 'dcos-token',
         filename: 'marathon.json',
         appid: 'jenkins-deployed-app',
         docker: "vishaldenge/cd-demo-app:${gitCommit()}".toString(),
-        labels: ['lastChangedBy': "${gitEmail()}".toString()]
+      //  labels: ['lastChangedBy': "${gitEmail()}".toString()]
     )
 
 
