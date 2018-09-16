@@ -62,7 +62,7 @@ node {
         forceUpdate: false,
       //  credentialsId: 'dcos-token',
         filename: 'marathon.json',
-        appid: 'jenkins-deployed-app',
+        appid: 'cd-demo-app',
         docker: "vishaldenge/cd-demo-app:${gitCommit()}".toString(),
       //  labels: ['lastChangedBy': "${gitEmail()}".toString()]
     )
