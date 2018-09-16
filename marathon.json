@@ -1,7 +1,7 @@
 {
     "container": {
         "docker": {
-            "image": "vishaldenge/cd-demo-app:latest",
+            "image": "vishaldenge/cd-demo-app:${gitCommit()}",
             "network": "BRIDGE",
             "portMappings": [
                 {
