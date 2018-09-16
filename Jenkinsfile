@@ -58,7 +58,7 @@ node {
     stage 'Deploy'
 
     marathon(
-        url: 'http://marathon.mesos:8080',
+        url: 'http://172.29.133.15:8080',
         forceUpdate: false,
         credentialsId: 'dcos-token',
         filename: 'marathon.json',
