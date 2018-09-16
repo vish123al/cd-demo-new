@@ -51,7 +51,7 @@ node {
       //  sh "docker login -u '${env.DOCKER_HUB_USERNAME}' -p '${env.DOCKER_HUB_PASSWORD}' -e demo@mesosphere.com"
         sh "docker login -u 'vishaldenge' -p 'v!sh@l123'"
         sh "docker push mesosphere/cd-demo-app:${gitCommit()}"
-    }
+    //}
 
 
     // Deploy
