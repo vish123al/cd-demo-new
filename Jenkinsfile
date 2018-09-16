@@ -34,20 +34,22 @@ node {
     // Test Docker image
     stage 'Test'
     sh "docker run -d --name=test-container-${env.BUILD_NUMBER} mesosphere/cd-demo-app:${gitCommit()}"
-    sh "docker run mesosphere/linkchecker linkchecker --no-warnings http://${ipAddress()}:4000/"
+   // sh "docker run mesosphere/linkchecker linkchecker --no-warnings http://${ipAddress()}:4000/"
 
 
     // Log in and push image to Docker Hub
     stage 'Publish'
-    withCredentials(
-        [[
-            $class: 'UsernamePasswordMultiBinding',
-            credentialsId: 'docker-hub-credentials',
-            passwordVariable: 'DOCKER_HUB_PASSWORD',
-            usernameVariable: 'DOCKER_HUB_USERNAME'
-        ]]
-    ) {
-        sh "docker login -u '${env.DOCKER_HUB_USERNAME}' -p '${env.DOCKER_HUB_PASSWORD}' -e demo@mesosphere.com"
+    
+    //withCredentials(
+      //  [[
+        //    $class: 'UsernamePasswordMultiBinding',
+          //  credentialsId: 'docker-hub-credentials',
+            //passwordVariable: 'DOCKER_HUB_PASSWORD',
+            //usernameVariable: 'DOCKER_HUB_USERNAME'
+        //]]
+    //) {
+      //  sh "docker login -u '${env.DOCKER_HUB_USERNAME}' -p '${env.DOCKER_HUB_PASSWORD}' -e demo@mesosphere.com"
+        sh "docker login -u 'vishaldenge' -p 'v!sh@l123'"
         sh "docker push mesosphere/cd-demo-app:${gitCommit()}"
     }
 
